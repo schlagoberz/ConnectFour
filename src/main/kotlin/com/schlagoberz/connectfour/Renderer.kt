@@ -1,5 +1,8 @@
 package com.schlagoberz.connectfour
 
+import com.schlagoberz.connectfour.utils.redBackground
+import com.schlagoberz.connectfour.utils.yellowBackground
+
 class Renderer(private val board: Board) {
     fun render(): String {
         var representation = getHeader()

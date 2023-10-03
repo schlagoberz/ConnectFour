@@ -1,4 +1,4 @@
-package com.schlagoberz.connectfour
+package com.schlagoberz.connectfour.utils
 
 // Extension functions for colorizing the foreground
 fun String.black() = colorizeForeground(this, Color.BLACK)
@@ -40,10 +40,7 @@ private fun colorizeBackground(string: String, color: Color) = colorize(string, 
 private fun colorizeForeground(string: String, color: Color) = colorize(string, color.foreground)
 private fun colorize(string: String, ansiColor: String) = "$ansiColor$string$RESET"
 
-private const val BG_MODIFIER = 10
-private const val ESCAPE = "\u001b"
-private const val RESET = "$ESCAPE[0m" // to reset color to the default
-
+// cf. table in https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit
 private enum class Color(colorCode: Int) {
     BLACK(30),
     RED(31),
@@ -66,3 +63,7 @@ private enum class Color(colorCode: Int) {
     val foreground: String = "$ESCAPE[${colorCode}m"
     val background: String = "$ESCAPE[${colorCode + BG_MODIFIER}m"
 }
+
+private const val BG_MODIFIER = 10
+private const val ESCAPE = "\u001b" // Prefix for all used escape codes
+private const val RESET = "$ESCAPE[0m" // Escape code to reset color to the default

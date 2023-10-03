@@ -1,5 +1,7 @@
 package com.schlagoberz.connectfour
 
+import com.schlagoberz.connectfour.utils.red
+import com.schlagoberz.connectfour.utils.yellow
 import kotlin.system.exitProcess
 
 class GameEngine(private val renderer: Renderer, private val connectFour: ConnectFour) {
