@@ -29,7 +29,7 @@ class Renderer(private val board: Board) {
             for (column in 0..<board.width) {
                 representation += "|" + when (board[column, row]) {
                     Player.Red -> "R".redBackground()
-                    Player.Yellow -> "R".yellowBackground()
+                    Player.Yellow -> "Y".yellowBackground()
                     null -> " "
                 } + "|"
             }
