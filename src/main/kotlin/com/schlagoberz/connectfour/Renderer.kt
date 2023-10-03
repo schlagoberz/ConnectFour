@@ -1,7 +1,7 @@
 package com.schlagoberz.connectfour
 
-import com.schlagoberz.connectfour.utils.redBackground
-import com.schlagoberz.connectfour.utils.yellowBackground
+import com.schlagoberz.connectfour.utils.red
+import com.schlagoberz.connectfour.utils.yellow
 
 class Renderer(private val board: Board) {
     fun render(): String {
@@ -28,8 +28,8 @@ class Renderer(private val board: Board) {
         for (row in board.height - 1 downTo 0) {
             for (column in 0..<board.width) {
                 representation += "|" + when (board[column, row]) {
-                    Player.Red -> "R".redBackground()
-                    Player.Yellow -> "Y".yellowBackground()
+                    Player.Red -> "\u2B24".red()
+                    Player.Yellow -> "\u2B24".yellow()
                     null -> " "
                 } + "|"
             }
